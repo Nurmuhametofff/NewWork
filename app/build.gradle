@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'androidx.navigation.safeargs.kotlin'
+    id 'org.jetbrains.kotlin.kapt'
 }
 
 android {
@@ -51,6 +52,7 @@ dependencies {
     def nav_version = "2.5.0"
     def room_version = "2.4.2"
 
+    kapt "androidx.room:room-compiler:$room_version"
     implementation "androidx.core:core-ktx:$core_version"
     implementation "androidx.appcompat:appcompat:$appcompat_version"
     implementation "com.google.android.material:material:$mdc_version"
@@ -64,7 +66,6 @@ dependencies {
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
     implementation "androidx.room:room-runtime:$room_version"
 
-    annotationProcessor "androidx.room:room-compiler:$room_version"
     testImplementation "junit:junit:$junit_version"
     androidTestImplementation "androidx.test.ext:junit:$ext_junit_version"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_core_version"

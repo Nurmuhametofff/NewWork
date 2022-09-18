@@ -46,6 +46,7 @@ class PostViewHolder(
             content.text = post.content
             like.isChecked = post.likedByMe
             like.text = "${post.likes}"
+            share.text = "${post.share}"
             if (post.video == null) binding.playVideoGroup.visibility =
                 View.GONE else binding.playVideoGroup.visibility = View.VISIBLE
             play.setOnClickListener { onInteractionListener.onVideo(post) }
